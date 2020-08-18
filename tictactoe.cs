@@ -5,6 +5,7 @@ namespace Tic
     class Program
     {             
         static char[] array = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        //static char[] arr = array;
         static int player = 1; 
         static int choice;     
         static int flag = 0;
@@ -110,47 +111,31 @@ namespace Tic
             Console.WriteLine("     |     |      ");
         }      
         private static int Result()
-        {          
-            if (array[1] == array[2] && array[2] == array[3])
+        {
+            for (int i = 1; i < 10; i = i + 3)
+            {
+                if (array[i] == array[i + 1] && array[i + 1] == array[i + 2])
+                    return 1;
+            }
+            for (int i = 1; i < 4;i=i+1)
+            {
+                if (array[i] == array[i + 3] && array[i + 3] == array[i + 6])
+                    return 1;
+            }
+            if (array[1] == array[5] && array[5] == array[9])
             {
                 return 1;
-            }            
-            else if (array[4] == array[5] && array[5] == array[6])
-            {
-                return 1;
-            }             
-            else if (array[6] == array[7] && array[7] == array[8])
-            {
-                return 1;
-            }      
-                            
-            else if (array[1] == array[4] && array[4] == array[7])
-            {
-                return 1;
-            }            
-            else if (array[2] == array[5] && array[5] == array[8])
-            {
-                return 1;
-            }            
-            else if (array[3] == array[6] && array[6] == array[9])
+            }
+            if (array[3] == array[5] && array[5] == array[7])
             {
                 return 1;
             }
 
-            
-            else if (array[1] == array[5] && array[5] == array[9])
-            {
-                return 1;
-            }
-            else if (array[3] == array[5] && array[5] == array[7])
-            {
-                return 1;
-            }
-                       
-            else if (array[1] != '1' && array[2] != '2' && array[3] != '3' && array[4] != '4' && array[5] != '5' && array[6] != '6' && array[7] != '7' && array[8] != '8' && array[9] != '9')
+            if (array[1] != '1' && array[2] != '2' && array[3] != '3' && array[4] != '4' && array[5] != '5' && array[6] != '6' && array[7] != '7' && array[8] != '8' && array[9] != '9')
             {
                 return -1;
             }
+
 
             else
             {
